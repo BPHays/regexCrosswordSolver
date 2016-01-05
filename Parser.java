@@ -1,4 +1,3 @@
-import java.util.regex.*;
 
 class Parser {
 	/**
@@ -17,7 +16,7 @@ class Parser {
 					break;
 				case '[':
 					// add all of the elements in the character class
-					while((c = clue.charAt(i)) != ']') {
+					for(i++; (c = clue.charAt(i)) != ']'; i++) {
 						constraints[currConst].addToCharset((int) c);
 					}
 					currConst++;
